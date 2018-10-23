@@ -214,7 +214,7 @@ on r.inventory_id=i.inventory_id
 join payment p
 on p.rental_id=r.rental_id
 group by 1
-order by 2
+order by 2 desc
 limit 5;
 
 
@@ -234,7 +234,7 @@ on r.inventory_id=i.inventory_id
 join payment p
 on p.rental_id=r.rental_id
 group by 1
-order by 2
+order by 2 desc
 limit 5;
 
 #8b. How would you display the view that you created in 8a?
