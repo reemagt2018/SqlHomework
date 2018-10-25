@@ -100,7 +100,8 @@ group by 1,2;
 
 select title, count(actor_id )  from  film F
 join film_actor FA
-on F.film_id=FA.film_id;
+on F.film_id=FA.film_id
+group by 1;
 
 
 #6d. How many copies of the film Hunchback Impossible exist in the inventory system?
@@ -108,7 +109,8 @@ on F.film_id=FA.film_id;
 select "Hunchback Impossible" as Movie_Inventory,count(inventory_id) from inventory I
 join film F
 on F.film_id=I.film_id
-where F.title="Hunchback Impossible";
+where F.title="Hunchback Impossible"
+group by 1;
 
 
 
@@ -130,7 +132,8 @@ order by 2;
 select title from film F
 where language_id in 
 (select language_id from language
-where name='English');
+where name='English'
+and (title like 'K%' OR title like 'Q%'));
 
 
 
